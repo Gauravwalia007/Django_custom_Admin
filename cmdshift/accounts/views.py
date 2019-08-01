@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,HttpResponse
-from .models import Users
+from .models import UserProfile
 from django.contrib import messages
 from .forms import RegistrationForm,EditProfileForm
 from django.contrib.auth.forms import PasswordChangeForm
@@ -23,13 +23,6 @@ def register(request):
         return render(request,'register.html',{'form':form})
 
 
-
-def info(request):
-    if request.method=='POST':
-        return redirect(reverse('accounts:home'))
-    else:
-        user=Users.objects.all().last()
-        return render(request,'info.html',{'user':user})
 
 def profile(request):
     user=request.user
