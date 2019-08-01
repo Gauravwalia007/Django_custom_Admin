@@ -126,3 +126,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/pics/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
